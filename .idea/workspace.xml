@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15__11_45__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15_오전_11_45_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15__11_44__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15_오전_11_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/BooleanField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/PostCreate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/PostEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/PostList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/ToggleButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/UserList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-18__5_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-18__5_24__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/eventboard/EventBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eventboard/EventBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/freeboard/FreeBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/freeboard/FreeBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shortform/ShortFrom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shortform/ShortForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/BoardSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/BoardSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dtboard/DTBInputForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/DTBInputForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dtboard/InputMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/InputMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostModify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostModify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/match/TinderCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/TinderCards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/match/tinderCards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/tinderCards.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/ChatSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ChatSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,30 +74,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.map.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ys&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/mygitworkspace/Finalproject/CheeUs_Backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.index.js.executor": "Run",
+    "Node.js.map.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging ys",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/mygitworkspace/Finalproject/CheeUs_Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JavaScript&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JavaScript"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\mygitworkspace\Finalproject\CheeUs_Frontend\src\components" />

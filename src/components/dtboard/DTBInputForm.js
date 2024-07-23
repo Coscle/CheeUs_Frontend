@@ -10,6 +10,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ko } from 'date-fns/locale';
 import { format } from 'date-fns';
+import Swal from 'sweetalert2';
 
 function DTBInputForm() {
   const [startDate, setStartDate] = useState(new Date());
@@ -29,14 +30,37 @@ function DTBInputForm() {
   });
 
   const onSubmitHandler = async () => {
-    if (title === '') return;
+    if (title === '') {
+	  Swal.fire({
+	      title: '제목을 입력해주세요!',
+	      icon: 'warning',
+	      showCancelButton: false,
+	      confirmButtonColor: '#48088A',
+	      confirmButtonText: '확인',
+      });
+	  return;
+	}
+	if(!selectedPlace){
+	  Swal.fire({
+	      title: '지도에서 장소를 선택해주세요!',
+	      icon: 'warning',
+	      showCancelButton: false,
+	      confirmButtonColor: '#48088A',
+	      confirmButtonText: '확인',
+      });		
+      return;
+	}
+    
+    
     const content = editorRef.current.getInstance().getMarkdown(); // content를 getInstance().getMarkdown()으로 받아옴
     addPost(title, content, time);
     navigate('/dtboard'); // 게시글 작성 후 게시판으로 이동
+    window.location.reload();
   };
 
   const onExitHandler = () => {
     navigate('/dtboard');
+    window.location.reload();
   };
 
   const onChangeTitleHandler = (e) => {
@@ -96,7 +120,7 @@ function DTBInputForm() {
           <ToastEditor ref={editorRef} />
         </div>
         <div className="mapContainer">
-          <InputMap />
+          <InputMap isEditing={false} />
         </div>
       </div>
       <div className="bottomContainer">
