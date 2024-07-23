@@ -3,6 +3,12 @@ import axios from 'axios';
 import { fetchComments, addComment, deleteComment, updateComment } from './CommentSlice';
 
 const initialState = {
+  boards: [],
+  filteredBoards: [],
+  searchQuery: '',
+  likedMap: {},
+};
+/*
   boards: [
     {
       id: 1,
@@ -129,14 +135,31 @@ const initialState = {
   searchQuery: '', // 검색어 상태
   likedMap: {},
 };
+ */
 
 // 게시물 목록을 가져오는 thunk
+/*
 export const fetchBoards = createAsyncThunk(
   'board/fetchBoards',
   async () => {
-    const response = await axios.get('http://localhost:8080/boards');
+    const response = await axios.get('http://localhost:8080/board');
     return response.data;
   }
+);
+*/
+
+// 카테고리에 따른 게시물 목록을 가져오는 thunk
+export const fetchBoards = createAsyncThunk(
+    'board/fetchBoards',
+    async (category) => {
+        const urlMap = {
+            freeboard: 'http://localhost:8080/board/freeboard',
+            shortform: 'http://localhost:8080/board/shortform',
+            eventboard: 'http://localhost:8080/board/eventboard'
+        };
+        const response = await axios.get(urlMap[category]);
+        return { category, data: response.data };
+    }
 );
 
 // 게시물 추가를 위한 thunk
@@ -148,7 +171,7 @@ export const addBoard = createAsyncThunk(
     formData.append('content', boardData.content);
     formData.append('videoFile', boardData.videoFile);
 
-    const response = await axios.post('http://localhost:8080/boards', formData, {
+    const response = await axios.post('http://localhost:8080/board', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -162,7 +185,7 @@ export const updateBoard = createAsyncThunk(
   'board/updateBoard',
   async (updatedBoard) => {
     const { id, ...updatedData } = updatedBoard;
-    const response = await axios.put(`http://localhost:8080/boards/${id}`, updatedData);
+    const response = await axios.put(`http://localhost:8080/board/${id}`, updatedData);
     return response.data;
   }
 );
@@ -193,13 +216,13 @@ const boardSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBoards.fulfilled, (state, action) => {
-        state.boards = action.payload; // 게시물 목록 업데이트
-        state.filteredBoards = action.payload; // 초기 필터링된 게시물 목록 설정
+        .addCase(fetchBoards.fulfilled, (state, action) => {
+            state.boards = action.payload.data; // 게시물 목록 업데이트
+            state.filteredBoards = action.payload.data; // 초기 필터링된 게시물 목록 설정
       })
       .addCase(addBoard.fulfilled, (state, action) => {
-        state.boards.push(action.payload); // 새로운 게시물 추가
-        state.filteredBoards.push(action.payload); // 새로운 게시물도 필터링 목록에 추가
+          state.boards.push(action.payload); // 새로운 게시물 추가
+          state.filteredBoards.push(action.payload); // 새로운 게시물도 필터링 목록에 추가
       })
       .addCase(updateBoard.fulfilled, (state, action) => {
         const updatedBoard = action.payload;
