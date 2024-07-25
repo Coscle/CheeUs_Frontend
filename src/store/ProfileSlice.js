@@ -17,7 +17,7 @@ export const fetchUserProfile = createAsyncThunk(
         const response = await axios.get(`${serverUrl}/profile`, {
             params: { email: memberEmail }
         });
-        console.log(response.data);
+        // console.log(response.data);
         return response.data; // 프로필 데이터 반환
     }
 );
