@@ -60,9 +60,9 @@ export const fetchComments = createAsyncThunk(
       // 댓글 데이터 정보 추출
         const comments = response.data.map(comment => ({
             id: comment.id,
-            board_id: comment.boardId,
-            replAuthorId: comment.replAuthorId,
-            replContent: comment.replContent, // 백엔드에서 사용하는 이름 그대로 사용
+            board_id: comment.board_id,
+            repl_author_id: comment.repl_author_id,
+            repl_content: comment.repl_content, // 백엔드에서 사용하는 이름 그대로 사용
             writeday: comment.writeday
         }));
 
@@ -75,17 +75,14 @@ export const fetchComments = createAsyncThunk(
 export const addComment = createAsyncThunk(
   'comments/addComment',
   async (commentData) => {
-    const response = await axios.post('http://localhost:8080/comment', commentData);
-    return response.data;
-    /*
+    const response = await axios.post(`http://localhost:8080/comment/${commentData.id}`, commentData);
     return {
       id: response.data.id,
       board_id: response.data.board_id,
-      replAuthorId: response.data.replAuthorId,
-      replContent: response.data.replContent, // 백엔드에서 사용하는 이름 그대로 사용
+      repl_author_id: response.data.repl_author_id,
+      repl_content: response.data.repl_content, // 백엔드에서 사용하는 이름 그대로 사용
       writeday: response.data.writeday
     };
-*/
   }
 );
 
@@ -118,13 +115,13 @@ export const updateComment = createAsyncThunk(
     const { id, ...updatedData } = updatedComment;
     const response = await axios.put(`http://localhost:8080/comment/${id}`, {
       ...updatedData,
-        replContent: updatedData.replContent // 백엔드에서 사용하는 이름 그대로 사용
+        repl_content: updatedData.repl_content // 백엔드에서 사용하는 이름 그대로 사용
     });
     return {
       id: response.data.id,
       board_id: response.data.board_id,
-        replAuthorId: response.data.replAuthorId,
-        replContent: response.data.replContent,
+        repl_author_id: response.data.repl_author_id,
+        repl_content: response.data.repl_content,
       writeday: response.data.writeday
     };
   }
