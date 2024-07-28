@@ -14,62 +14,62 @@ import './Magazine.css';
 const initialMagazines = [
   {
     id: 1,
-    title: "이번주 가장핫한 성수 Label5 팝업!",
-    content: "이번주 가장핫한 성수 Label5 팝업!",
-    photoes: "/images/popup1.jpg",
+    title: "이주의 술집추천 : 성수동편",
+    content: "성수의 핫한 술집 추천!",
+    photoes: "/images/recommend1.jpg",
     admin_id: 1,
     author_name: "관리자",
     like: 17,
     views: 151,
-    category: 'popup'
+    category: 'recommend'
   },
   {
     id: 2,
-    title: "Absolute 팝업",
-    content: "보드카의 정석 Absolute 팝업",
-    photoes: "/images/popup2.jpg",
+    title: "이주의 술집추천 : 이태원편",
+    content: "핫플 이태원의 술집추천",
+    photoes: "/images/recommend2.jpg",
     admin_id: 2,
     author_name: "관리자",
     like: 21,
     views: 78,
-    category: 'popup'
+    category: 'recommend'
   },
   {
     id: 3,
-    title: "JackDaniel's pop-up",
-    content: "JackDaniel's pop-up",
-    photoes: "/images/popup3.jpg",
+    title: "이주의 술집추천 : 홍대편",
+    content: "패피들의 성지 홍대 술집추천!",
+    photoes: "/images/recommend3.jpg",
     admin_id: 2,
     author_name: "관리자",
     like: 5,
     views: 37,
-    category: 'popup'
+    category: 'recommend'
   },
   {
     id: 4,
-    title: "Devine 보드카 성수 pop-up",
-    content: "Devine 보드카 성수 pop-up",
-    photoes: "/images/popup4.jpg",
+    title: "이주의 술집추천 : 을지로편",
+    content: "힙지로의 힙한 술집추천!",
+    photoes: "/images/recommend4.jpg",
     admin_id: 2,
     author_name: "관리자",
     like: 34,
     views: 97,
-    category: 'popup'
+    category: 'recommend'
   },
   {
     id: 5,
-    title: "홍대 맥주시음 팝업",
-    content: "홍대 맥주 시음 팝업",
-    photoes: "/images/popup5.jpg",
+    title: "이주의 술집추천 : 군자편",
+    content: "나만 아는 군자 술집 추천!",
+    photoes: "/images/recommend5.jpg",
     admin_id: 2,
     author_name: "관리자",
     like: 55,
     views: 138,
-    category: 'popup'
+    category: 'recommend'
   },
 ];
 
-const PopUp = () => {
+const Recommend = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -86,13 +86,13 @@ const PopUp = () => {
   }, [location.search]);
 
   const handleCardClick = (id) => {
-    navigate(`/magazine/detail/popup/${id}`);
+    navigate(`/magazine/detail/recommend/${id}`);
   };
 
   // 페이지네이션
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentMagazines = magazines.filter(magazine => magazine.category === 'popup' && (magazine.title.includes(searchQuery) || magazine.content.includes(searchQuery))).slice(startIndex, startIndex + itemsPerPage);
-  const totalPages = Math.ceil(magazines.filter(magazine => magazine.category === 'popup' && (magazine.title.includes(searchQuery) || magazine.content.includes(searchQuery))).length / itemsPerPage);
+  const currentMagazines = magazines.filter(magazine => magazine.category === 'recommend' && (magazine.title.includes(searchQuery) || magazine.content.includes(searchQuery))).slice(startIndex, startIndex + itemsPerPage);
+  const totalPages = Math.ceil(magazines.filter(magazine => magazine.category === 'recommend' && (magazine.title.includes(searchQuery) || magazine.content.includes(searchQuery))).length / itemsPerPage);
 
   const handleChange = (event, value) => {
     setCurrentPage(value);
@@ -187,4 +187,4 @@ const PopUp = () => {
   );
 };
 
-export default PopUp;
+export default Recommend;

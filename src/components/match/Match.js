@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TinderCards from './TinderCards';
 import { Modal, Button } from 'react-bootstrap';
@@ -20,7 +20,7 @@ import { fetchUserProfile, selectProfileStatus, selectUserProfile } from '../../
 
 const Match = () => {
   const dispatch = useDispatch();
-  const {memberEmail, serverUrl} = useContext(AuthContext);
+  const { memberEmail, serverUrl } = useContext(AuthContext);
   const userProfile = useSelector(selectUserProfile);
   const profileStatus = useSelector(selectProfileStatus);
 
@@ -28,17 +28,21 @@ const Match = () => {
   // const locationOk = useSelector(selectLocationOk);
   // const matchServiceAgreed = useSelector(selectMatchServiceAgreed);
   const [userLocation, setUserLocationState] = React.useState(true);
-  const [showLocationModal, setShowLocationModal] = React.useState(false);
-  const [showMatchServiceModal, setShowMatchServiceModal] = React.useState(false);
-  const [showHelpModal, setShowHelpModal] = React.useState(false);
+  const [showLocationModal, setShowLocationModal] = useState(false);
+  const [showMatchServiceModal, setShowMatchServiceModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchUserProfiles({ serverUrl }));
+  }, [dispatch, serverUrl]);
 
 
   useEffect(() => {
     if (profiles && memberEmail) {
-      const checkLocationPermission = async () => {
-        const user = profiles.find(profile => profile.profile.email === memberEmail);
-        
-        if (user && user.profile.locationOk === 1) {
+      const user = profiles.find(profile => profile.profile.email === memberEmail);
+      
+      if (user) {
+        if (user.profile.locationOk === 1) {
           requestGeoLocation();
         } else if (user && user.locationOk === 0) {
           setShowLocationModal(true);
@@ -74,11 +78,16 @@ const Match = () => {
                 dispatch(setLocationDenied());
             }
         );
-    } else {
-        console.log('Geolocation 사용 불가능');
-        dispatch(setLocationDenied());
+      }
     }
-};
+
+  const updateLocationPermissionOnServer = () => {
+    dispatch(updateLocationPermission({ serverUrl, userId: loggedInUserId }));
+  };
+
+  const updateMatchServiceAgreementOnServer = () => {
+    dispatch(updateMatchServiceAgreement({ serverUrl, userId: loggedInUserId }));
+  };
 
   const handleConfirm = () => {
     setShowLocationModal(false);
@@ -161,7 +170,7 @@ const Match = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
+  
       {/* 1:1 매칭 서비스 동의 모달 */}
       <Modal show={showMatchServiceModal} onHide={handleMatchServiceCancel} style={{ fontFamily: "YeojuCeramic" }}>
         <Modal.Header closeButton>
@@ -179,9 +188,9 @@ const Match = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
+  
       {/* 도움말 모달 */}
-      <Modal show={showHelpModal} onHide={() => setShowHelpModal(false)} style={{ fontFamily: "YeojuCeramic", fontSize:"12px"}}>
+      <Modal show={showHelpModal} onHide={() => setShowHelpModal(false)} style={{ fontFamily: "YeojuCeramic", fontSize: "12px" }}>
         <Modal.Header closeButton>
           <Modal.Title>위치 권한 활성화 방법</Modal.Title>
         </Modal.Header>

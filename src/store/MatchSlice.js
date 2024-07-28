@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import profiles from '../profileData'; 
 import axios from 'axios';
 
-
-const loggedInUserId = 1; 
+const loggedInUserId = 1;
 
 const initialState = {
     userLocation: null,
@@ -22,31 +20,22 @@ const initialState = {
 // 타 멤버 프로필을 가져오는 thunk
 export const fetchUserProfiles = createAsyncThunk(
     'match/fetchUserProfiles',
-    async ({serverUrl}) => {
-        
-        // 타 멤버 프로필 불러오기
+    async ({ serverUrl }) => {
         const response = await axios.get(`${serverUrl}/match`);
-
-        const profiles = [];
-        
-        response.data.map((data)=>{
+        const profiles = response.data.map(data => {
             const imageBlob = [];
-
-            for(let i=0 ; i < data.profile.photo ; i ++){
-                imageBlob.push("data:" + data.imageType[i]
-                    + ";base64," + data.imageBlob[i] );
+            for (let i = 0; i < data.profile.photo; i++) {
+                imageBlob.push(`data:${data.imageType[i]};base64,${data.imageBlob[i]}`);
             }
-
-            profiles.push({
-                profile : {
+            return {
+                profile: {
                     ...data.profile,
-                    popularity : data.popularity
+                    popularity: data.popularity
                 },
-                imageBlob : imageBlob
-            })
-        })
-
-        return profiles; // 프로필 데이터 반환
+                imageBlob: imageBlob
+            };
+        });
+        return profiles;
     }
 );
 
@@ -90,7 +79,7 @@ const MatchSlice = createSlice({
     initialState,
     reducers: {
         setUserLocation(state, action) {
-            const { latitude, longitude } = action.payload.coords; 
+            const { latitude, longitude } = action.payload.coords;
             state.userLocation = { latitude, longitude };
             state.locationOk = true;
         },
@@ -118,7 +107,7 @@ const MatchSlice = createSlice({
         updateConfirmedList(state, action) {
             const profileId = action.payload;
             state.shuffledProfiles = state.shuffledProfiles.map(profile => {
-                if (profile.id === profileId) {
+                if (profile.profile.id === profileId) {
                     return {
                         ...profile,
                         confirmedlist: [...profile.confirmedlist, loggedInUserId],
@@ -131,12 +120,14 @@ const MatchSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(updateLocationPermission.fulfilled, (state, action) => {
-                state.userProfile = action.payload;
-                state.locationOk = true;
+                const updatedProfile = action.payload;
+                state.userProfile = updatedProfile;
+                state.locationOk = updatedProfile.location_ok === 1;
             })
             .addCase(updateMatchServiceAgreement.fulfilled, (state, action) => {
-                state.userProfile = action.payload;
-                state.matchServiceAgreed = true;
+                const updatedProfile = action.payload;
+                state.userProfile = updatedProfile;
+                state.matchServiceAgreed = updatedProfile.match_ok === 1;
             })
             .addCase(fetchUserProfiles.fulfilled, (state, action) => {
                 state.profiles = action.payload;
@@ -146,7 +137,6 @@ const MatchSlice = createSlice({
             });
     },
 });
-
 
 export const {
     setUserLocation,
@@ -163,10 +153,8 @@ export const selectProfiles = (state) => state.match.profiles;
 export const selectShuffledProfiles = (state) => state.match.shuffledProfiles;
 export const selectCurrentIndex = (state) => state.match.currentIndex;
 export const selectShowMessages = (state) => state.match.showMessages;
-
 export const selectUserLocation = (state) => state.match.userLocation;
 export const selectLocationOk = (state) => state.match.locationOk;
 export const selectMatchServiceAgreed = (state) => state.match.matchServiceAgreed;
 export const selectUserProfile = (state) => state.match.userProfile;
-
 export default MatchSlice.reducer;
