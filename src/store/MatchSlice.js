@@ -50,27 +50,40 @@ export const fetchUserProfiles = createAsyncThunk(
     }
 );
 
+// 위치 정보 동의
 export const updateLocationPermission = createAsyncThunk(
     'match/updateLocationPermission',
-    async (userId) => {
-        const user = profiles.find(profile => profile.id === userId);
-        const updatedUser = { ...user, location_ok: 1 };
+    async ({memberEmail, serverUrl, latitude, longitude}) => {
+        const formData = new FormData();
+
+        formData.append("email", memberEmail);
+        formData.append("type", "location");
+        formData.append("latitude", latitude);
+        formData.append("longitude", longitude);
         
-        const response = await axios.put(`https://your-server-api-url/updateLocationPermission/${userId}`, updatedUser);
+        const response = await axios.put(`${serverUrl}/profile/allow`, formData);
         return response.data;
     }
 );
 
+// 매칭 동의
 export const updateMatchServiceAgreement = createAsyncThunk(
     'match/updateMatchServiceAgreement',
-    async (userId) => {
-        const user = profiles.find(profile => profile.id === userId);
-        const updatedUser = { ...user, match_ok: 1 };
+    async ({memberEmail, serverUrl}) => {
+        const formData = new FormData();
+
+        formData.append("email", memberEmail);
+        formData.append("type", "match");
         
-        const response = await axios.put(`https://your-server-api-url/updateMatchServiceAgreement/${userId}`, updatedUser);
+        const response = await axios.put(`${serverUrl}/profile/allow`, formData);
         return response.data;
     }
 );
+
+// firstLiker 먼저 좋아요 눌렀을 경우 목록 불러오기 -> 둘이마셔요에서 띄울지 말지 정하는 로직
+export const loadFirstLike = createAsyncThunk(
+    'match/loadFirstLike'
+)
 
 const MatchSlice = createSlice({
     name: 'match',

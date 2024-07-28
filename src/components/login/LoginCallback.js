@@ -22,7 +22,9 @@ const LoginCallback = () => {
 
     // 로그인 처리 및 유저 정보 찾기
     useEffect(()=>{
+        console.log(token);
         if (token) {
+            console.log(jwtDecode(token).email);
             axios.get(serverUrl + "/member/signIn", {params : {
                 email: jwtDecode(token).email
             }})

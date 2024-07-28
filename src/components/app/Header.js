@@ -18,20 +18,21 @@ import axios from 'axios';
 
 function Header() {
     const [isUnread, setIsUnread] = useState(true); // 채팅 읽지 않은 상태
-    const { token, serverUrl, requestSignOut } = useContext(AuthContext);
+    const { memberEmail, token, serverUrl, requestSignOut } = useContext(AuthContext);
     const [isNavExpanded, setIsNavExpanded] = useState(false); // Navbar 확장 상태 확인
 
     const userProfile = useSelector(selectUserProfile); // Redux에서 사용자 프로필 가져오기
-    const profiles = useSelector(selectProfiles);
     const profileStatus = useSelector(selectProfileStatus);
+    const profiles = useSelector(selectProfiles);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (token) {
-            const memberEmail = jwtDecode(token).email;
-            dispatch(fetchUserProfile({ serverUrl, memberEmail }));
-        }
-    }, [token, dispatch, serverUrl]);
+    useEffect(()=>{
+        // // dispatch(fetchUserProfile({serverUrl, memberEmail}));
+        dispatch(fetchUserProfiles({serverUrl}));
+        dispatch(fetchUserProfile({serverUrl, memberEmail}));
+
+    }, [dispatch, serverUrl, memberEmail]);
+
 
     const handleLogout = () => {
         requestSignOut();
@@ -52,9 +53,10 @@ function Header() {
    };
 
    const springSecurity = async() => {
-    await axios.post(serverUrl + "/signIn", {}, {
+    await axios.post(serverUrl + "/member/signIn2", jwtDecode(token).email, {
         headers : {
-            "Authorization" : `Bearer ${token}`
+            "Authorization" : `Bearer ${token}`,
+            "content-Type" : "application/json"
         },
         withCredentials : true
     })
@@ -91,7 +93,7 @@ function Header() {
                             <Nav.Link href="/event">이벤트</Nav.Link>
                             <Nav.Link href="/magazine">메거진</Nav.Link>
 
-                            {isLoggedIn && profileStatus !== "loading" ? (
+                            {memberEmail ? (
                                 <>
                                     <Nav.Link href="/mypage">
                                         {isNavExpanded ? (

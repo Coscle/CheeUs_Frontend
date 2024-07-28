@@ -11,46 +11,48 @@ import {
   selectLocationOk,
   selectMatchServiceAgreed,
   fetchUserProfiles,
+  updateLocationPermission,
+  updateMatchServiceAgreement,
 } from '../../store/MatchSlice'; 
 import axios from 'axios';
 import { AuthContext } from '../login/OAuth';
-import { selectUserProfile } from '../../store/ProfileSlice';
-
-const loggedInUserId = 1;
+import { fetchUserProfile, selectProfileStatus, selectUserProfile } from '../../store/ProfileSlice';
 
 const Match = () => {
   const dispatch = useDispatch();
   const {memberEmail, serverUrl} = useContext(AuthContext);
   const userProfile = useSelector(selectUserProfile);
+  const profileStatus = useSelector(selectProfileStatus);
+
   const profiles = useSelector(selectProfiles);
-  //const locationOk = useSelector(selectLocationOk);
-  //const matchServiceAgreed = useSelector(selectMatchServiceAgreed);
+  // const locationOk = useSelector(selectLocationOk);
+  // const matchServiceAgreed = useSelector(selectMatchServiceAgreed);
   const [userLocation, setUserLocationState] = React.useState(true);
   const [showLocationModal, setShowLocationModal] = React.useState(false);
   const [showMatchServiceModal, setShowMatchServiceModal] = React.useState(false);
   const [showHelpModal, setShowHelpModal] = React.useState(false);
 
+
   useEffect(() => {
-    
-    dispatch(fetchUserProfiles({serverUrl}));
     if (profiles && memberEmail) {
       const checkLocationPermission = async () => {
         const user = profiles.find(profile => profile.profile.email === memberEmail);
         
         if (user && user.profile.locationOk === 1) {
           requestGeoLocation();
-        } else if (user && user.location_ok === 0) {
+        } else if (user && user.locationOk === 0) {
           setShowLocationModal(true);
         } else {
           dispatch(setLocationDenied());
         }
       };
 
-      if (userProfile.profile.locationOk === null) {
+      if (profileStatus === 'succeeded' ? userProfile.profile.locationOk === null : false) {
         checkLocationPermission();
       }
+      console.log(profileStatus);
     }
-  }, [userProfile, dispatch, profiles]);
+  }, [profiles, userProfile]);
 
   const requestGeoLocation = () => {
     if ('geolocation' in navigator) {
@@ -63,7 +65,8 @@ const Match = () => {
                 // 직렬화 가능한 객체로 디스패치
                 dispatch(setUserLocation({ coords: { latitude, longitude } }));
                 
-                updateLocationPermissionOnServer();
+                //updateLocationPermissionOnServer();
+                dispatch(updateLocationPermission({memberEmail, serverUrl, latitude, longitude}));
                 setShowMatchServiceModal(true);
             },
             error => {
@@ -89,7 +92,8 @@ const Match = () => {
   const handleMatchServiceConfirm = () => {
     dispatch(setMatchServiceAgreement(true));
     setShowMatchServiceModal(false);
-    updateMatchServiceAgreementOnServer();
+    dispatch(updateMatchServiceAgreement({memberEmail, serverUrl}));
+    window.location.reload();
   };
 
   const handleMatchServiceCancel = () => {
@@ -101,31 +105,9 @@ const Match = () => {
     setShowHelpModal(true);
   };
 
-  const updateLocationPermissionOnServer = async () => {
-    try {
-      const user = profiles.find(profile => profile.profile.email === memberEmail);
-      const updatedUser = { ...user, location_ok: 1 };
-      const response = await axios.put(`https://your-server-api-url/updateLocationPermission/${loggedInUserId}`, updatedUser);
-      console.log('서버 응답:', response.data);
-    } catch (error) {
-      console.error('서버 요청 에러:', error);
-    }
-  };
-
-  const updateMatchServiceAgreementOnServer = async () => {
-    try {
-      const user = profiles.find(profile => profile.profile.email === memberEmail);
-      const updatedUser = { ...user, match_ok: 1 };
-      const response = await axios.put(`https://your-server-api-url/updateMatchServiceAgreement/${loggedInUserId}`, updatedUser);
-      console.log('서버 응답:', response.data);
-    } catch (error) {
-      console.error('서버 요청 에러:', error);
-    }
-  };
-
   return (
     <div className="match_container">
-      {userProfile ? (userProfile.profile.locationOk === null ? (
+      {profiles && userProfile ?  (userProfile.profile.locationOk === null ? (
         <div className="permissionMessage">
           <p>위치 정보 확인 중...</p>
         </div>
@@ -141,7 +123,7 @@ const Match = () => {
       ) : (
         <div className="permissionMessage">
           <p>매칭 서비스를 사용하려면 위치 정보 제공에 동의해야 합니다.</p>
-          {userProfile ?. userProfile.profile.locationOk === false && (
+          {userProfile.profile.locationOk === false && (
             <>
               <div>
                 현재 위치 정보가 <span>차단</span>되어 있습니다.
@@ -156,8 +138,10 @@ const Match = () => {
             <Button variant="dark" onClick={handleHelp}>도움말</Button>
           </div>
         </div>
-      )) :  (<div className="permissionMessage">
+      )) : memberEmail ? (<div className="permissionMessage">
               <p>잠시만 기다려주세요...</p>
+            </div>) : (<div className="permissionMessage">
+              <p>로그인부터 해주세요.</p>
             </div>)}
 
       {/* 위치 정보 동의 모달 */}

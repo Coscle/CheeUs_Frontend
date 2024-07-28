@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel, Modal } from 'react-bootstrap';
-import { updateUserLocation, likeProfile, unlikeProfile } from '../../store/ProfileSlice';
 import './profileCard.css';
 import axios from 'axios';
 import { AuthContext } from '../login/OAuth';
+import { updateUserLocation } from '../../store/ProfileSlice';
 
 const ProfileCard = ({ profileInfo, loggedInUserId, showLikeButton }) => {
     const dispatch = useDispatch();

@@ -16,10 +16,7 @@ import {
   decrementIndex, 
   resetIndex 
 } from '../../store/MatchSlice';
-import axios from 'axios';
 import { AuthContext } from '../login/OAuth';
-
-const loggedInUserId = 1;
 
 const TinderCards = () => {
   const dispatch = useDispatch();
@@ -32,16 +29,16 @@ const TinderCards = () => {
 
   useEffect(() => {
     if (profiles.length > 0) {
+      console.log(shuffledProfiles);
       const filteredProfiles = profiles.filter(profile =>
         profile.profile.locationOk === true && 
         profile.profile.matchOk === true && 
-        //!profile.confirmedlist.includes(loggedInUserId) && 
-        profile.profile.email !== memberEmail
+        profile.profile.email !== memberEmail &&
+        !shuffledProfiles.includes(profile)
       );
       setCards([...filteredProfiles]);
 
       const shuffled = shuffleArray(filteredProfiles);
-      // dispatch(setShuffledProfiles(shuffled));
       dispatch(setShuffledProfiles(shuffled));
     }
   }, [dispatch, profiles]);
@@ -107,7 +104,7 @@ const TinderCards = () => {
       ) : (
         <>
           <div className='cardContainer'>
-            {profileCards.length > 0 ? profileCards.map((profile, index) => (
+            {profileCards ? profileCards.map((profile, index) => (
               <TinderCard
                 ref={childRefs[index]}
                 className='swipe'
