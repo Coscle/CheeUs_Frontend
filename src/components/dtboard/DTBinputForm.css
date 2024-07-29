@@ -72,6 +72,7 @@
 	display: flex;
 	height: 98.5vh;
 	background-color: #f9f9f9;
+	gap: 10px;
   }
   .mypageContainer {
   	flex: 1;
@@ -234,6 +235,7 @@
     height: 2.5rem;
     font-size: 1.125rem;
     margin-left: 5px;
+    margin-right: 10px;
   }
    /*지도 영역*/
   .mapContainer{
@@ -248,9 +250,9 @@
    box-shadow: 0px 0px 2px 1px #999;
    margin: 0 auto;
    width: 50%;
-   height: 87.5vh;
-   margin-right: 15px;
-   border-radius: 20px;    
+   height: 87.3vh;
+   margin-right: 25px;
+   border-radius: 10px;    
    margin-top: 90px;
    }
   .board-right {
@@ -357,5 +359,5 @@
 	height: auto;
 	width: 260px;
 	padding: 5px;
-	
+	border-radius: 5px;
 }
