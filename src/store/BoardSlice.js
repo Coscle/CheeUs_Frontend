@@ -23,24 +23,40 @@ export const fetchBoards = createAsyncThunk(
     }
 );
 
+
+/*
 // 게시물 추가를 위한 thunk
 export const addBoard = createAsyncThunk(
-  'board/addBoard',
-  async (boardData) => {
+    'board/addBoard',
+    async (boardData) => {
     const formData = new FormData();
     formData.append('title', boardData.title);
     formData.append('content', boardData.content);
-    /*
-    if (boardData.media instanceof File) {
-        formData.append('media', boardData.media);
-    } else {
-        console.error("Media is not a valid file");
-    }
-     */
+    formData.append('media', boardData.media);
 
     const response = await axios.post('http://localhost:8080/board/insert', formData);
     return response.data;
   }
+);
+ */
+
+// 게시물 추가를 위한 thunk
+export const addBoard = createAsyncThunk(
+    'board/addBoard',
+    async (boardData) => {
+        const formData = new FormData();
+        formData.append('board', JSON.stringify(boardData)); // JSON 형태의 게시물 데이터
+        if (boardData.file) {
+            formData.append('file', boardData.file); // 파일 추가
+        }
+
+        const response = await axios.post('http://localhost:8080/board/insert', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        return response.data;
+    }
 );
 
 // 게시물 업데이트를 위한 thunk

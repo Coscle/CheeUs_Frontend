@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/eventboard/WriteEventBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eventboard/WriteEventBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/freeboard/WriteFreeBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/freeboard/WriteFreeBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shortform/WriteShortForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shortform/WriteShortForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/BoardSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/BoardSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +137,7 @@
       <workItem from="1721709200113" duration="9174000" />
       <workItem from="1721883938220" duration="10331000" />
       <workItem from="1721969287806" duration="3854000" />
-      <workItem from="1722231713940" duration="8154000" />
+      <workItem from="1722231713940" duration="14276000" />
     </task>
     <servers />
   </component>
