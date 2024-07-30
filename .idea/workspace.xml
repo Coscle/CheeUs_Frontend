@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ys" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,7 +56,7 @@
     "Node.js.index.js.executor": "Run",
     "Node.js.map.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ys",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/mygitworkspace/Finalproject/CheeUs_Backend",
@@ -65,6 +66,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs.jest.jest_package": "",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -93,8 +95,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.Maps.js" />
         <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.Maps.js" />
         <item itemvalue="Jest.All Tests" />
         <item itemvalue="Node.js.Maps.js" />
         <item itemvalue="Node.js.index.js" />
@@ -130,6 +132,14 @@
       <workItem from="1721104817128" duration="5191000" />
       <workItem from="1721174621782" duration="17425000" />
       <workItem from="1721260446482" duration="18891000" />
+      <workItem from="1721531322123" duration="1905000" />
+      <workItem from="1721608943634" duration="14002000" />
+      <workItem from="1721709200113" duration="9174000" />
+      <workItem from="1721883938220" duration="10331000" />
+      <workItem from="1721969287806" duration="3854000" />
+      <workItem from="1722231713940" duration="14376000" />
+      <workItem from="1722297891251" duration="28000" />
+      <workItem from="1722297934506" duration="3682000" />
     </task>
     <servers />
   </component>

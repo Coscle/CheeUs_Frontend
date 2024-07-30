@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
 import './fonts/fonts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,10 +20,9 @@ import PostDetail from './components/dtboard/PostDetail';
 import PostModify from './components/dtboard/PostModify';
 import { PostProvider } from './components/dtboard/PostContext';
 import BoardPage from './components/board/BoardPage';
-import ShortForm from './components/shortform/ShortFrom';
+import ShortForm from './components/shortform/ShortForm';
 import WriteShortForm from './components/shortform/WriteShortForm.js'
 import EditShortForm from './components/shortform/EditShortForm'
-import DetailShortForm from './components/shortform/DetailShortForm';
 import InputFrom from './components/toast/InputForm';
 import FreeBoard from './components/freeboard/FreeBoard';
 import DetailFreeBoard from './components/freeboard/DetailFreeBoard';
@@ -33,20 +32,11 @@ import EventBoard from './components/eventboard/EventBoard';
 import DetailEventBoard from './components/eventboard/DetailEventBoard';
 import WriteEventBoard from './components/eventboard/WriteEventBoard';
 import EditEventBoard from './components/eventboard/EditEventBoard';
+import DetailShortForm from './components/shortform/DetailShortForm';
 import { AuthProvider } from './components/login/OAuth';
-//import scoket from './server';
+//import socket from './server';
 import AdminDashboard from './admin';
-import Magazine from './components/magazine/Magazine';
-import PopUp from './components/magazine/PopUp';
-import Recipe from './components/magazine/Recipe';
-import Tmi from './components/magazine/Tmi';
-import Recommend from './components/magazine/Recommend';
-import MagazineDetail from './components/magazine/MagazineDetail';
-import Event from './components/event/Event';
-import EventAll from './components/event/EventAll';
-import EventNow from './components/event/EventNow';
-import EventEnd from './components/event/EventEnd';
-import EventDetail from './components/event/EventDetail';
+
 
 const ChatPage = lazy(() => import('./components/chat/ChatPage'));
 
@@ -89,18 +79,7 @@ function App() {
               <Route path="/chatpage" element={<ChatPage />} />
               <Route path="/input" element={<InputFrom />} />
               <Route path="/admin/*" element={<AdminDashboard />} />
-              <Route path="/magazine" element={<Magazine/>} />
-              <Route path="/magazine/popup" element={<PopUp/>} />              
-              <Route path="/magazine/recipe" element={<Recipe/>} />              
-              <Route path="/magazine/tmi" element={<Tmi/>} />              
-              <Route path="/magazine/Recommend" element={<Recommend/>} />              
-              <Route path="/magazine/detail/:category/:id" element={<MagazineDetail />} />
-              <Route path="/event" element={<Event/>} />              
-              <Route path="/event/eventAll" element={<EventAll/>} />              
-              <Route path="/event/eventNow" element={<EventNow/>} />              
-              <Route path="/event/eventEnd" element={<EventEnd/>} />              
               <Route path="*" element={<div>404</div>} />
-              <Route path="/event/detail/:category/:id" element={<EventDetail />} />
             </Routes>
             </Suspense>
           <Footer />

@@ -56,17 +56,16 @@ const WriteEventBoard = () => {
     const authorName = userProfile.name;
 
     const newBoard = {
-      id: newId,
       author_id: authorId,
-      author_name: authorName,
       category: 3,
       title,
       content,
-      writeday: new Date().toISOString().split('T')[0],
+      writeday: new Date().toISOString(),
       views: 0,
       like: 0,
       repl_cnt: 0,
       photoes: '',
+      media: ''
     };
     
     swal({

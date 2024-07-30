@@ -18,6 +18,8 @@ function Repl({ boardId }) {
     const { token } = useContext(AuthContext);
     const userProfile = useSelector(selectUserProfile);
 
+    // console.log(userProfile.nickname);
+
     let decodedToken = {};
     if (token) {
       decodedToken = jwtDecode(token);
@@ -33,7 +35,7 @@ function Repl({ boardId }) {
     }, [dispatch, boardId]);
 
     useEffect(() => {
-        console.log('Comments:', comments); 
+        // console.log('Comments:', comments);
     }, [comments]);
 
     const handleInputChange = (e) => {
@@ -120,7 +122,7 @@ function Repl({ boardId }) {
                                 <span className="reply-nickname">{replNickname}</span>
                             </div>
                             <div className="comment-content">
-                                <span>{comment.content}</span>
+                                <span>{comment.repl_content}</span>
                                 {comment.repl_author_id === loggedInUserId && ( // 조건부 렌더링
                                     <button
                                         className="delete-button button-no-style"
@@ -141,7 +143,7 @@ function Repl({ boardId }) {
                                             <span className="reply-nickname">{reply.repl_author_id}</span>
                                         </div>
                                         <div className="reply-content">
-                                            <span>{reply.content}</span>
+                                            <span>{reply.repl_content}</span>
                                             {reply.repl_author_id === loggedInUserId && ( // 조건부 렌더링
                                                 <button
                                                     className="delete-button button-no-style"

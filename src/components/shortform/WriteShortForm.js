@@ -64,17 +64,16 @@ function WriteShortForm() {
       const authorName = userProfile.name;
   
       const newBoard = {
-        id: newId,
         author_id: authorId,
-        author_name: authorName,
         category: 2,
         title,
         content,
-        writeday: new Date().toISOString().split('T')[0],
+          writeday: new Date().toISOString(),
         views: 0,
         like: 0,
         repl_cnt: 0,
-        videoUrl,
+          photoes: '',
+        media: ''
       };
   
       console.log('제출될 게시물 정보:', newBoard); // 콘솔에 제출될 게시물 정보 출력

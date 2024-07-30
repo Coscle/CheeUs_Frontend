@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5615ec32-e2b7-4cf6-93fd-0b60339f1cc2\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15__11_45__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15_오전_11_45_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15__11_44__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15_오전_11_44_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/eventboard/EventBoard.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/eventboard/EventBoard.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/freeboard/FreeBoard.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/freeboard/FreeBoard.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/shortform/ShortFrom.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/shortform/ShortForm.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/store/BoardSlice.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/store/BoardSlice.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;aBiteOfPizza&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Coscle/CheeUs_Frontend.git&quot;,\r\n    &quot;accountId&quot;: &quot;eb03ee2e-9ea5-4ed5-a51e-0d990fc9844c&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2iwRjXlgdruBKDHOdwNanqzb6K5\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,\r\n    &quot;Node.js.map.js.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;ys&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/mygitworkspace/Finalproject/CheeUs_Backend&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;ts.external.directory.path&quot;: &quot;C:\\\\Program Files\\\\JetBrains\\\\IntelliJ IDEA 2024.1.4\\\\plugins\\\\javascript-plugin\\\\jsLanguageServicesImpl\\\\external&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;JavaScript&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\mygitworkspace\\Finalproject\\CheeUs_Frontend\\src\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Node.js.index.js\">\r\n    <configuration name=\"All Tests\" type=\"JavaScriptTestRunnerJest\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <scope-kind value=\"ALL\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Maps.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/src/components/map/Maps.js\" working-dir=\"$PROJECT_DIR$/src/components/map\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"index.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/src/index.js\" working-dir=\"$PROJECT_DIR$/src\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Node.js.Maps.js\" />\r\n        <item itemvalue=\"Node.js.index.js\" />\r\n        <item itemvalue=\"Jest.All Tests\" />\r\n        <item itemvalue=\"Node.js.Maps.js\" />\r\n        <item itemvalue=\"Node.js.index.js\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5615ec32-e2b7-4cf6-93fd-0b60339f1cc2\" name=\"Changes\" comment=\"\" />\r\n      <created>1720399792533</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1720399792533</updated>\r\n      <workItem from=\"1720399793230\" duration=\"862000\" />\r\n      <workItem from=\"1720402367642\" duration=\"1017000\" />\r\n      <workItem from=\"1720570734842\" duration=\"2046000\" />\r\n      <workItem from=\"1720575274627\" duration=\"7758000\" />\r\n      <workItem from=\"1720687311853\" duration=\"549000\" />\r\n      <workItem from=\"1720740373543\" duration=\"5084000\" />\r\n      <workItem from=\"1720770288639\" duration=\"133000\" />\r\n      <workItem from=\"1721003267195\" duration=\"2525000\" />\r\n      <workItem from=\"1721028641555\" duration=\"1227000\" />\r\n      <workItem from=\"1721088134675\" duration=\"19000\" />\r\n      <workItem from=\"1721104817128\" duration=\"5191000\" />\r\n      <workItem from=\"1721174621782\" duration=\"17425000\" />\r\n      <workItem from=\"1721260446482\" duration=\"18891000\" />\r\n      <workItem from=\"1721531322123\" duration=\"1905000\" />\r\n      <workItem from=\"1721608943634\" duration=\"14002000\" />\r\n      <workItem from=\"1721709200113\" duration=\"9174000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9a5c168f4702c1d7658310559ea3b03546b38901)
++++ b/.idea/workspace.xml	(date 1721719522185)
+@@ -5,16 +5,30 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15__11_45__Changes_.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-07-15_오전_11_45_[Changes]/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15__11_44__Changes_.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-15_오전_11_44_[Changes]/shelved.patch" beforeDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/BooleanField.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/PostCreate.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/PostEdit.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/PostList.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/ToggleButton.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/UserList.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/admin/index.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/eventboard/EventBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eventboard/EventBoard.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/freeboard/FreeBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/freeboard/FreeBoard.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/shortform/ShortFrom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shortform/ShortForm.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/store/BoardSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/BoardSlice.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/app/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/Header.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatList.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatPage.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/dtboard/DTBInputForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/DTBInputForm.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/dtboard/InputMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/InputMap.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostContext.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostDetail.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/dtboard/PostModify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dtboard/PostModify.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/match/TinderCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/TinderCards.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/match/tinderCards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/tinderCards.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/store/ChatSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ChatSlice.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -59,30 +73,30 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+-    &quot;Node.js.map.js.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;ys&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/mygitworkspace/Finalproject/CheeUs_Backend&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Node.js.index.js.executor": "Run",
++    "Node.js.map.js.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "Merging ys",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/mygitworkspace/Finalproject/CheeUs_Backend",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs.jest.jest_package": "",
++    "nodejs_package_manager_path": "npm",
++    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
++    "vue.rearranger.settings.migration": "true"
+   },
+-  &quot;keyToStringList&quot;: {
+-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+-      &quot;JavaScript&quot;
++  "keyToStringList": {
++    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
++      "JavaScript"
+     ]
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\mygitworkspace\Finalproject\CheeUs_Frontend\src\components" />
+@@ -142,7 +156,7 @@
+       <workItem from="1721260446482" duration="18891000" />
+       <workItem from="1721531322123" duration="1905000" />
+       <workItem from="1721608943634" duration="14002000" />
+-      <workItem from="1721709200113" duration="9174000" />
++      <workItem from="1721709200113" duration="9795000" />
+     </task>
+     <servers />
+   </component>

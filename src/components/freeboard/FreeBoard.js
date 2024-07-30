@@ -9,7 +9,15 @@ import CardCover from '@mui/joy/CardCover';
 import Favorite from '@mui/icons-material/Favorite';
 import Visibility from '@mui/icons-material/Visibility';
 import BoardTop from '../board/BoardTop';
-import { selectBoards, toggleLike, selectLikedMap, filterBoards, setSearchQuery, selectFilteredBoards } from '../../store/BoardSlice';
+import {
+    selectBoards,
+    toggleLike,
+    selectLikedMap,
+    filterBoards,
+    setSearchQuery,
+    selectFilteredBoards,
+    fetchBoards
+} from '../../store/BoardSlice';
 import Pagination from '@mui/material/Pagination';
 import './freeBoard.css';
 
@@ -17,21 +25,26 @@ const FreeBoard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const boards = useSelector(selectBoards);
   const likedMap = useSelector(selectLikedMap);
   const filteredBoards = useSelector(selectFilteredBoards);
-  
+
   const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
 
+  // 보드 목록 로딩
+    useEffect(() => {
+        dispatch(fetchBoards('freeboard'));
+    }, [dispatch]);
+
   // URL 쿼리에서 검색어를 읽어와 상태에 설정
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const query = params.get('search') || '';
-    dispatch(setSearchQuery(query)); // 검색어를 상태에 설정
-    dispatch(filterBoards()); // 검색어에 따라 필터링
-  }, [location.search, dispatch]);
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const query = params.get('search') || '';
+        dispatch(setSearchQuery(query)); // 검색어를 상태에 설정
+        dispatch(filterBoards()); // 검색어에 따라 필터링
+    }, [location.search, dispatch]);
 
   const handleLikeClick = (id) => {
     dispatch(toggleLike(id));
