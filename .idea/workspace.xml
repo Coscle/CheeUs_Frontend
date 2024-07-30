@@ -4,89 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/event10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/event9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/popup5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recipe5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/recommend5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tmi5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/Event.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/Event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventAll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventDetail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventEnd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventNow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventTop.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/event/EventTop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/Magazine.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/Magazine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineCategory.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineDetail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineTop.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/MagazineTop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/PopUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/Recipe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/Recommend.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/magazine/Tmi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board/BoardCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/BoardCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/chatPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/chatPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/LoginCallback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginCallback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/OAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/OAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/match/Match.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/Match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/match/TinderCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/match/TinderCards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/EditProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/EditProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/MyProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/MyProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/UserProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/UserProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/editProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/editProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/signup/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/signup/SignupCallback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/signup/SignupCallback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ChatSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ChatSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/MatchSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/MatchSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ProfileSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProfileSlice.js" afterDir="false" />
-    </list>
+    <list default="true" id="5615ec32-e2b7-4cf6-93fd-0b60339f1cc2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ys" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,7 +53,7 @@
     "Node.js.index.js.executor": "Run",
     "Node.js.map.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging ys",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/mygitworkspace/Finalproject/CheeUs_Backend",
