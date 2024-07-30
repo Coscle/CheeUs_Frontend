@@ -13,10 +13,9 @@ import {
   fetchUserProfiles,
   updateLocationPermission,
   updateMatchServiceAgreement,
-} from '../../store/MatchSlice'; 
-import axios from 'axios';
+} from '../../store/MatchSlice';
 import { AuthContext } from '../login/OAuth';
-import { fetchUserProfile, selectProfileStatus, selectUserProfile } from '../../store/ProfileSlice';
+import { selectProfileStatus, selectUserProfile } from '../../store/ProfileSlice';
 
 const Match = () => {
   const dispatch = useDispatch();
@@ -33,8 +32,8 @@ const Match = () => {
   const [showHelpModal, setShowHelpModal] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchUserProfiles({ serverUrl }));
-  }, [dispatch, serverUrl]);
+    dispatch(fetchUserProfiles({ serverUrl, memberEmail }));
+  }, [dispatch, serverUrl, memberEmail]);
 
 
   useEffect(() => {
@@ -50,11 +49,6 @@ const Match = () => {
           dispatch(setLocationDenied());
         }
       };
-
-      if (profileStatus === 'succeeded' ? userProfile.profile.locationOk === null : false) {
-        checkLocationPermission();
-      }
-      console.log(profileStatus);
     }
   }, [profiles, userProfile]);
 
@@ -81,14 +75,6 @@ const Match = () => {
       }
     }
 
-  const updateLocationPermissionOnServer = () => {
-    dispatch(updateLocationPermission({ serverUrl, userId: loggedInUserId }));
-  };
-
-  const updateMatchServiceAgreementOnServer = () => {
-    dispatch(updateMatchServiceAgreement({ serverUrl, userId: loggedInUserId }));
-  };
-
   const handleConfirm = () => {
     setShowLocationModal(false);
     requestGeoLocation();
@@ -113,6 +99,7 @@ const Match = () => {
   const handleHelp = () => {
     setShowHelpModal(true);
   };
+
 
   return (
     <div className="match_container">

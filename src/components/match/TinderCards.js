@@ -17,6 +17,7 @@ import {
   resetIndex 
 } from '../../store/MatchSlice';
 import { AuthContext } from '../login/OAuth';
+import axios from 'axios';
 
 const TinderCards = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const TinderCards = () => {
   const shuffledProfiles = useSelector(selectShuffledProfiles);
   const currentIndex = useSelector(selectCurrentIndex);
   const [showMessages, setShowMessages] = React.useState([]);
-  const {memberEmail} = useContext(AuthContext);
+  const {memberEmail, serverUrl} = useContext(AuthContext);
 
   useEffect(() => {
     if (profiles.length > 0) {
@@ -62,10 +63,56 @@ const TinderCards = () => {
   const swiped = (direction, profileId, index) => {
     const newShowMessages = [...showMessages];
     newShowMessages[index] = direction === 'right' ? 'LIKE' : 'NOPE';
+
+    // 백엔드에서 처리
+    const formData = new FormData();
+    formData.append('member1', memberEmail);
+    formData.append('member2', profileId);
+    formData.append('type', direction);
+    axios.post(serverUrl + "/match/swipe", formData)
+    .then((res)=>{
+      if (res.data) {
+        //sendMessage(res.data);
+      }
+      console.log(res)
+    });
+
     setShowMessages(newShowMessages); // 상태 업데이트
     dispatch(updateConfirmedList(profileId));
     dispatch(decrementIndex());
     console.log(`Confirmedlist updated for profileId ${profileId}:`, shuffledProfiles[index].confirmedlist);
+  };
+
+  
+  // 채팅방 생성 + 시스템 메시지 전송
+  const sendMessage = async (data) => {
+      if (!memberEmail) {
+          console.log('Cannot send message: No selected chat, empty input, or missing user ID.');
+          return;
+      }
+
+      const newRoom = {
+        id : data.id,
+        member1 : data.member1,
+        member2 : data.member2
+      }
+
+      const newMessage = {
+          sender_id: 'System',
+          message: '매칭 성공! 즐거운 대화를 나누어 보아요',
+          write_day: new Date().toISOString(),
+          read: 0,
+      };
+
+      //socket.current.emit('sendMessage', newMessage);
+
+      try {
+          const endpoint = 'http://localhost:8889/api/messages';
+          await axios.post(endpoint, newMessage);
+          //dispatch(setMessageInput(''));
+      } catch (error) {
+          console.error('Error sending message:', error);
+      }
   };
 
   const outOfFrame = (name, idx) => {
