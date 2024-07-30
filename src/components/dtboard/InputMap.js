@@ -10,6 +10,7 @@ const InputMap = ({ isEditing }) => {
   const [markers, setMarkers] = useState([]);
   const [pagination, setPagination] = useState([]);
   const [places, setPlaces] = useState([]);
+  const [currentOverlay, setCurrentOverlay] = useState(null);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -63,9 +64,9 @@ const InputMap = ({ isEditing }) => {
 
   const setMarkerOnMap = (place, mapInstance) => {
     const placePosition = new kakao.maps.LatLng(place.latitude, place.longitude);
-    const { marker } = addMarker(placePosition, 0, place.title, place.address);
+    const { marker, overlay } = addMarker(placePosition, 0, place.title, place.address);
     mapInstance.setCenter(placePosition);
-    setMarkers([{ marker }]);
+    setMarkers([{ marker, overlay }]);
   };
 
   const handleSearch = () => {
@@ -90,10 +91,10 @@ const InputMap = ({ isEditing }) => {
     const bounds = new kakao.maps.LatLngBounds();
     const newMarkers = places.map((place, index) => {
       const placePosition = new kakao.maps.LatLng(place.y, place.x);
-      const { marker, infowindow } = addMarker(placePosition, index, place.place_name, place.address_name);
+      const { marker, overlay } = addMarker(placePosition, index, place.place_name, place.address_name);
       bounds.extend(placePosition);
 
-      return { marker, infowindow, place };
+      return { marker, overlay, place };
     });
 
     setMarkers(newMarkers);
@@ -116,25 +117,46 @@ const InputMap = ({ isEditing }) => {
 
     marker.setMap(map);
 
-    const content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+    const generateCustomOverlayContent = (onClose) => {
+      let content = `
+        <div style="position: relative; display: inline-block; padding:15px; background-color:white; border-radius:10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.5); border: none;">
+          <button style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 10px; cursor: pointer; color: black;">✖</button>
+          <h3 style="margin:0; padding-bottom:5px; border-bottom:1px solid #ccc;width: auto;">${title}</h3>
+          <p style="margin:5px 0;">${addressName}</p>
+          <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid white;"></div>
+        </div>
+      `;
 
-    const infowindow = new kakao.maps.InfoWindow({
-      content: content
+      // DOM element 생성 후 이벤트 리스너 추가
+      const div = document.createElement('div');
+      div.innerHTML = content.trim();
+      const button = div.querySelector('button');
+      button.addEventListener('click', onClose);
+
+      return div;
+    };
+
+    const overlay = new kakao.maps.CustomOverlay({
+      content: generateCustomOverlayContent(() => {
+        overlay.setMap(null);
+        setCurrentOverlay(null);
+      }),
+      position: marker.getPosition(),
+      yAnchor: 1.5,
+      zIndex: 3,
+      clickable: true
     });
 
-    kakao.maps.event.addListener(marker, 'mouseover', function () {
-      infowindow.open(map, marker);
+    kakao.maps.event.addListener(marker, 'click', () => {
+      if (currentOverlay) {
+        currentOverlay.setMap(null);
+      }
+      overlay.setMap(map);
+      setCurrentOverlay(overlay);
       const latlng = marker.getPosition();
       const message = `위도 : ${latlng.getLat()}, 경도 : ${latlng.getLng()}, 장소명 : ${title}, 주소 : ${addressName}`;
       console.log(message);
-    });
 
-    kakao.maps.event.addListener(marker, 'mouseout', function () {
-      infowindow.close();
-    });
-
-    kakao.maps.event.addListener(marker, 'click', function () {
-      const latlng = marker.getPosition();
       setSelectedPlace({
         latitude: latlng.getLat(),
         longitude: latlng.getLng(),
@@ -143,12 +165,15 @@ const InputMap = ({ isEditing }) => {
       });
     });
 
-    return { marker, infowindow };
+    return { marker, overlay };
   };
 
   const removeMarkers = () => {
     markers.forEach(markerObj => {
       markerObj.marker.setMap(null);
+      if (markerObj.overlay) {
+        markerObj.overlay.setMap(null);
+      }
     });
     setMarkers([]);
   };
@@ -178,9 +203,8 @@ const InputMap = ({ isEditing }) => {
 
   const handleListItemClick = (index) => {
     const markerObj = markers[index];
-    console.log('List item clicked, marker:', markerObj);
     if (markerObj) {
-      kakao.maps.event.trigger(markerObj.marker, 'mouseover');
+      kakao.maps.event.trigger(markerObj.marker, 'click');
       map.panTo(markerObj.marker.getPosition());
     } else {
       console.error('Marker object is undefined or null');
