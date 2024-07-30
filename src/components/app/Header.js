@@ -10,9 +10,11 @@ import MailIcon from '@mui/icons-material/Mail';
 import { AuthContext } from '../login/OAuth';
 import './header.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUserProfile, selectUserProfile } from '../../store/ProfileSlice';
+import { fetchUserProfile, selectProfileStatus, selectUserProfile } from '../../store/ProfileSlice';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import { fetchUserProfiles, selectProfiles } from '../../store/MatchSlice';
+import axios from 'axios';
 
 function Header() {
     const [isUnread, setIsUnread] = useState(true); // 채팅 읽지 않은 상태
@@ -20,6 +22,8 @@ function Header() {
     const [isNavExpanded, setIsNavExpanded] = useState(false); // Navbar 확장 상태 확인
 
     const userProfile = useSelector(selectUserProfile); // Redux에서 사용자 프로필 가져오기
+    const profiles = useSelector(selectProfiles);
+    const profileStatus = useSelector(selectProfileStatus);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -47,10 +51,27 @@ function Header() {
      window.location.reload();
    };
 
+   const springSecurity = async() => {
+    await axios.post(serverUrl + "/signIn", {}, {
+        headers : {
+            "Authorization" : `Bearer ${token}`
+        },
+        withCredentials : true
+    })
+    .then((res)=>{
+        console.log(res);
+        console.log(jwtDecode(token).email);
+    })
+    .catch((err)=>console.log(err));
+    // axios.get(serverUrl + "/oauth2/authorization/google").then((res)=>{console.log(res)}).catch((err)=>console.log(err));
+    // axios.get(serverUrl + "/signIn").then((res)=>{console.log(res)}).catch((err)=>console.log(err));
+   }
+
     const isLoggedIn = userProfile !== null;
 
     return (
         <div className="header-container">
+            <button onClick={springSecurity}>스프링시큐리티 테스트 버튼</button>
             <Navbar bg="#f2d420" expand="lg" style={{ backgroundColor: 'white' }} expanded={isNavExpanded}>
                 <Container fluid className="header-box">
                     <Navbar.Brand href="/main" className="header-logo">
@@ -68,9 +89,9 @@ function Header() {
                             <Nav.Link href="/dtboard" onClick = {handleLinkClick}>함께 마셔요</Nav.Link>
                             <Nav.Link href="/board">게시판</Nav.Link>
                             <Nav.Link href="/event">이벤트</Nav.Link>
-                            <Nav.Link href="/magazine">메거진</Nav.Link>
+                            <Nav.Link href="/magazine">매거진</Nav.Link>
 
-                            {isLoggedIn ? (
+                            {isLoggedIn && profileStatus !== "loading" ? (
                                 <>
                                     <Nav.Link href="/mypage">
                                         {isNavExpanded ? (
@@ -108,7 +129,7 @@ function Header() {
                                 <Nav.Link href="/login">
                                     {isNavExpanded ? (
                                         "Log-In"
-                                    ) : (
+                                    ) : profileStatus === "loading" ? <></> : (
                                         <button type="button" className="btn btn-light header-login-btn">Log-In</button>
                                     )}
                                 </Nav.Link>

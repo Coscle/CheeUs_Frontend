@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import "./boardCategory.css";
 
-function BoardPage() {
+function BoardCategory() {
     const [activeIndex, setActiveIndex] = useState(0);
     const navigate = useNavigate();
 
@@ -57,4 +57,4 @@ function BoardPage() {
     );
 }
 
-export default BoardPage;
+export default BoardCategory;

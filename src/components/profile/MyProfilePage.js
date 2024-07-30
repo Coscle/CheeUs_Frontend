@@ -27,8 +27,7 @@ const MyProfilePage = () => {
     const profileError = useSelector(selectProfileError);
 
     useEffect(() => {
-        dispatch(fetchUserProfile({ serverUrl, memberEmail }));
-        console.log(userProfile);
+        //dispatch(fetchUserProfile({ serverUrl, memberEmail }));
     }, [dispatch, serverUrl, memberEmail]);
 
     useEffect(() => {
@@ -40,7 +39,7 @@ const MyProfilePage = () => {
 
     const handleEditProfile = () => {
         if (userProfile) {
-            navigate(`/mypage/edit/${userProfile.id}`);
+            navigate(`/mypage/edit/${userProfile.profile.id}`);
         }
     };
 
@@ -51,7 +50,7 @@ const MyProfilePage = () => {
                 {profileStatus === 'loading' ? (
                     <p>로딩 중...</p>
                 ) : userProfile ? (
-                    <ProfileCard profile={userProfile} />
+                    <ProfileCard profileInfo={userProfile} loggedInUserId={memberEmail} />
                 ) : (
                     <p>프로필을 찾을 수 없습니다.</p>
                 )}

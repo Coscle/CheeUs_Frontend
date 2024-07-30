@@ -20,7 +20,7 @@ import PostDetail from './components/dtboard/PostDetail';
 import PostModify from './components/dtboard/PostModify';
 import { PostProvider } from './components/dtboard/PostContext';
 import BoardPage from './components/board/BoardPage';
-import ShortForm from './components/shortform/ShortForm';
+import ShortForm from './components/shortform/ShortFrom';
 import WriteShortForm from './components/shortform/WriteShortForm.js'
 import EditShortForm from './components/shortform/EditShortForm'
 import InputFrom from './components/toast/InputForm';
@@ -34,8 +34,9 @@ import WriteEventBoard from './components/eventboard/WriteEventBoard';
 import EditEventBoard from './components/eventboard/EditEventBoard';
 import DetailShortForm from './components/shortform/DetailShortForm';
 import { AuthProvider } from './components/login/OAuth';
-//import socket from './server';
+//import scoket from './server';
 import AdminDashboard from './admin';
+
 
 const ChatPage = lazy(() => import('./components/chat/ChatPage'));
 
